@@ -1,0 +1,518 @@
+doctype html
+head
+  style
+    :scss
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        margin: 0;
+      }
+      section.page {
+        margin-bottom: 80px;
+        break-after: page;
+      }
+      input[type=text], textarea {
+        font-style: italic;
+        resize: none;
+        padding: 0;
+        border:none;
+        background-image:none;
+        background-color:transparent;
+        box-shadow: none;
+        font-family: inherit;
+        font-size: inherit;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          outline: 1px solid grey;
+        }
+      }
+      form .form-item {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+        & > label {
+          margin-right: 8px;
+        }
+      }
+      body {
+        margin: 0 auto;
+        max-width: 800px;
+      }
+      body > nav {
+        margin: 12px;
+      }
+      body header {
+        h1 {
+          font-weight: 800;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+      .table {
+        display: grid;
+        grid-gap: 20px;
+        margin: 40px 0;
+        &.three-cols {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        &.two-cols {
+          grid-template-columns: 1fr 1fr;
+        }
+        & > .h {
+          font-weight: 500;
+          text-decoration: underline;
+        }
+      }
+      .question-table {
+        counter-reset: number;
+        .q {
+          counter-increment: number;
+          text-indent: -1em;
+          &::before {
+            content: counter(number)". ";
+          }
+        }
+      }
+      form ul.qa, form ol.qa {
+        padding-left: 16px;
+        & > li > div {
+          display: flex;
+          flex-direction: column;
+        }
+        & > li .q {
+          display: block;
+          margin: 8px 0;
+        }
+        & > li .a {
+        }
+      }
+      p.title {
+        font-weight: 500;
+        text-decoration: underline;
+      }
+      .diagram {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px;
+
+        & > .block {
+          border: 1px solid black;
+          padding: 8px 20px;
+          & > span {
+            font-size: 1.2em;
+            text-transform: uppercase;
+          }
+        }
+      }
+body
+  form
+    nav
+      .name.form-item
+        label(for='document-owner-input') Name:
+        input#document-owner-input(type='text' placeholder='John Doe' name='document-owner')
+    header
+      h1 The Cold War
+    section.page#page-1
+      .table.three-cols.question-table
+        span.h Event
+        span.h Reaction / Response by U.S.A.
+        span.h Reaction / Response by Soviet Union
+
+        div.q
+          | Europe devastated by WWII - Fear of communist governments taking control.
+        textarea.a(name='page1-q1-a')
+        textarea.a(name='page1-q1-b')
+
+        div.q
+          | Berlin Blockade - Russian block access W. Berlin by land and Sea.
+        textarea.a(name='page1-q2-a')
+        textarea.a(name='page1-q2-b')
+
+        div.q
+          | Fear Soviet military will attempt to take over W. Europe - make communist.
+        textarea.a(name='page1-q3-a')
+        textarea.a(name='page1-q3-b')
+
+        div.q
+          | Decolonization in S.E.A. and Africa - West or East?
+        textarea.a(name='page1-q4-a')
+        textarea.a(name='page1-q4-b')
+
+        div.q
+          | Communist N. Korea invades non-communist S. Korea
+        textarea.a(name='page1-q5-a')
+        textarea.a(name='page1-q5-b')
+
+        div.q
+          | Suspicious communist spies in U.S.A. government and entertainment industry undermining U.S.A. democracy
+        textarea.a(name='page1-q6-a')
+        textarea.a(name='page1-q6-b')
+    section.page#page-2
+      p.title Soviet Foreign Policy After World War II
+      ol.qa
+        li
+          div
+            span.q In the cartoon above, who is the puppeteer?
+            textarea.a(name='page2-q1')
+        li
+          div
+            span.q Explain the symbolism of the puppets?
+            textarea.a(name='page2-q2')
+        li
+          div
+            span.q What would be an appropriate title for this cartoon?
+            textarea.a(name='page2-q3')
+        li
+          div
+            span.q How does this cartoon illustrate Soviet foreign policy after World War II?
+            textarea.a(name='page2-q4')
+    section.page#page-3
+      p.title Causes of the Cold War
+      .diagram
+        .block
+          span Truman Doctrine
+          ul.qa
+            li
+              div
+                span.q What was the purpose?
+                textarea.a(name='page3-q1')
+            li
+              div
+                span.q Who proposed it?
+                textarea.a(name='page3-q2')
+            li
+              div
+                span.q What year was it proposed?
+                textarea.a(name='page3-q3')
+            li
+              div
+                span.q How did it relate to the Cold War?
+                textarea.a(name='page3-q4')
+        .block
+          span Marshall Plan
+          ul.qa
+            li
+              div
+                span.q What was the purpose?
+                textarea.a(name='page3-q5')
+            li
+              div
+                span.q Who proposed it?
+                textarea.a(name='page3-q6')
+            li
+              div
+                span.q What year was it proposed?
+                textarea.a(name='page3-q7')
+            li
+              div
+                span.q How did it relate to the Cold War?
+                textarea.a(name='page3-q8')
+        .block
+          span Berlin Blockade
+          ul.qa
+            li
+              div
+                span.q What was the purpose?
+                textarea.a(name='page3-q9')
+            li
+              div
+                span.q Who proposed it?
+                textarea.a(name='page3-q10')
+            li
+              div
+                span.q What year was it proposed?
+                textarea.a(name='page3-q11')
+            li
+              div
+                span.q How did it relate to the Cold War?
+                textarea.a(name='page3-q12')
+        .block
+          span Berlin Airlift
+          ul.qa
+            li
+              div
+                span.q What was the purpose?
+                textarea.a(name='page3-q13')
+            li
+              div
+                span.q Who proposed it?
+                textarea.a(name='page3-q14')
+            li
+              div
+                span.q What year was it proposed?
+                textarea.a(name='page3-q15')
+            li 
+              div
+                span.q How did it relate to the Cold War?
+                textarea.a(name='page3-q16')
+    section.page#page-4
+      p.title Containment: Truman's Response to Soviet Expansion
+      p Part A: Interpret the following cartoons by answering the questions below.
+      ul.qa
+        li
+          span Cartoon 1: "Great Expectations"
+          ol
+            li
+              div
+                span.q Identify the country and leader represented by the undertaker.
+                textarea.a(name='page4-q1')
+            li
+              div
+                span.q Why would the cartoonist represent postwar England as a sick man?
+                textarea.a(name='page4-q2')
+            li
+              div
+                span.q Traditionally, England had policed the Mediterranean in order to protect its access to India and the Suez Canal.  In what Mediterranean countries did the USSR make early postwar advances to take advantage of England's incapacity to defend the Mediterranean balance of power?
+                textarea.a(name='page4-q3')
+            li
+              div
+                span.q In a sentence, summarize the meaning of this cartoon.
+                textarea.a(name='page4-q4')
+            li
+              div
+                span.q Through what 1947 policy did the United States act to spoil Russia's "Great Expectations" in this area?
+                textarea.a(name='page4-q5')
+        li
+          span Cartoon 2: "Step on it, Doc!"
+          ol
+            li
+              div
+                span.q In what way would the continuation of chaos in Western Europe be beneficial to Communism?
+                textarea.a(name='page4-q6')
+            li
+              div
+                span.q What country might take advantage of the weakness of Western Europe in 1947?
+                textarea.a(name='page4-q7')
+            li
+              div
+                span.q What country does the cartoonist see as the savior of Western Europe?
+                textarea.a(name='page4-q8')
+            li
+              div
+                span.q In a sentence, summarize the meaning of this cartoon.
+                textarea.a(name='page4-q9')
+            li
+              div
+                span.q Through what 1947 policy did the United States hasten to send economic aid to a Europe devastated by war?
+                textarea.a(name='page4-q10')
+        li
+          span Cartoon 3: "Unintentional Cupid"
+          ol
+            li
+              div
+                span.q Name some of the countries represented under the Atlantic Pact.
+                textarea.a(name='page4-q11')
+            li
+              div
+                span.q What country and leader are portrayed in the role of Cupid?
+                textarea.a(name='page4-q12')
+            li
+              div
+                span.q What historic agreeman is being represented here as a marriage?
+                textarea.a(name='page4-q13')
+            li
+              div
+                span.q In a sentence, summarize the meaning of this cartoon.
+                textarea.a(name='page4-q14')
+            li
+              div
+                span.q In what sense could the Atlantic Pact be referred to as a "shotgun wedding"?
+                textarea.a(name='page4-q15')
+        li
+          span Cartoon 4: "History Doesn't Repeat Itself."
+          ol
+            li
+              div
+                span.q Who is the man leading the United Nations?
+                textarea.a(name='page4-q16')
+            li
+              div
+                span.q To what 1950 conflict are they presumably headed?
+                textarea.a(name='page4-q17')
+            li
+              div
+                span.q What historic incidents leading to World War II prompted the inscription on the League of Nations tombstone?
+                textarea.a(name='page4-q18')
+            li
+              div
+                span.q In a sentence, summarize the meaning of this cartoon.
+                textarea.a(name='page4-q19')
+            li
+              div
+                span.q In your opinion, why didn't history repeat itself after World War II?
+                textarea.a(name='page4-q20')
+
+      
+      p Part B: To conclude this lesson, interpret the final cartoon below by answering the questions at the end.
+      ol.qa
+        li
+          div
+            span.q Why was the conflict between the United States and the Soviet Union after World War II often referred to as "the cold war"?
+            textarea.a(name='page4-q21')
+        li
+          div
+            span.q Accoding to the cartoonist, what was America's most effective weapon in the Cold War?
+            textarea.a(name='page4-q22')
+        li
+          div
+            span.q In your opinion, did American involvement in postwar Western Europe result in "heating up the cold war" or serve as a measured alternative to World War III? Explain your answer.
+            textarea.a(name='page4-q23')
+        li
+          div
+            span.q How did containment permanently change United States peacetime foreign policy?
+            textarea.a(name='page4-q24')
+    section.page#page-5
+      p.title Korea: War Without Victors
+      ol.qa
+        li
+          span What is meant by each of these phrases from the article:
+          ol
+            li
+              div
+                span.q "the little broken finger of Asia"
+                textarea.a(name='page5-q1-a')
+            li
+              div
+                span.q "Red China's Joe"
+                textarea.a(name='page5-q1-b')
+        li
+          div
+            span.q Why were Americans fighting along with Colombians, Ethiopians, and Porto Ricans?
+            textarea.a(name='page5-q2')
+        li
+          div
+            span.q Why had the Chinese entered the war?
+            textarea.a(name='page5-q3')
+        li
+          div
+            span.q Why weren't Americans allowed to go on the offensive?
+            textarea.a(name='page5-q4')
+        li
+          div
+            span.q Why did the soldiers feel just the sort of frustration that got General MacArthur fired?
+            textarea.a(name='page5-q5')
+        li
+          div
+            span.q Is the Korean War presented in histories today as a success or failure?  Explain your answer.
+            textarea.a(name='page5-q6')
+        li
+          div
+            span.q In your opinion, did the 33,000 American men who were killed in battle die in vain?  Explain your reasoning.
+            textarea.a(name='page5-q7')
+        li
+          ol
+            li
+              div
+                span.q How would you justify the war to a mother whose son was killed in the war?
+                textarea.a(name='page5-q8')
+            li
+              div
+                span.q How would Woodrow Wilson and Franklin Roosevelt - both firm believers in collective security - have viewed the outcome of the war?
+                textarea.a(name='page5-q9')
+        li
+          div
+            span.q Has history vindicated President Truman's decision to fire General MacArthur? Explain your answer.
+            textarea.a(name='page5-q10')
+        li
+          div
+            span.q What other limited wars has the world witnessed since the end of the Korean Conflict?  Why are we likely to have more frustrating wars of this kind in the future?
+            textarea.a(name='page5-q11')
+    section.page#page-6
+      p.title Loyalty vs. Liberty: The McCarthy Era
+      p The following activity involves recognizing cause-effect relationships in the McCarthy era.  Where the cause is given, your task is to supply the effect stemming from that cause.  Where the effect is given, you need to supply the cause for that result.
+      .table.two-cols
+        .h Causes
+        .h Effects
+        
+        textarea.question(name='page6-q1')
+        div.answer
+          | Actors and writers leaned toward Communist and Socialist principles
+
+        div.question
+          | China became Communist in 1949
+        textarea.answer(name='page6-q2')
+
+        div.question
+          | Accusations of HUAC about persons with Communist leanings and questionable loyalty
+        textarea.answer(name='page6-q3')
+
+        div.question
+          input(type='text' size=3 name='page6-q4').inline
+          span War
+        div.answer
+          | Enhanced McCarthy's power and prestige in early 1950s
+
+        div.question
+          | Rumors of an artist's placement on the blacklist.
+        textarea.answer(name='page6-q5')
+
+        textarea.question(name='page6-q6')
+        div.answer
+          | Automatic damage to reputation
+
+        div.question
+          | Cooperation with HUAC
+        textarea.answer(name='page6-q7')
+
+        textarea.question(name='page6-q8')
+        div.answer
+          | Publications of "Red Channels"
+
+        div.question
+          | Need for quality writers
+        textarea.answer(name='page6-q9')
+
+        textarea.question(name='page6-q10')
+        div.answer
+          | Blacklist began losing its effect
+
+        textarea.question(name='page6-q11')
+        div.answer
+          | Lack of creativity in movies
+
+
+    script(type="text/javascript").
+       function textAreaAdjust() {
+         this.style.height = '1px';
+         this.style.height = `${25+this.scrollHeight}px`;
+       }
+       Array.from(document.body.querySelectorAll('textarea')).forEach(el => {
+         el.setAttribute('placeholder', 'Enter your answer here...');
+         el.onkeyup = textAreaAdjust;
+       });
+
+       function inlineInputAdjust() {
+         this.setAttribute('size', Math.max(3, this.value.length));
+       }
+
+       Array.from(document.body.querySelectorAll('input.inline')).forEach(el => {
+         el.setAttribute('placeholder', 'Answer');
+         el.onkeyup = inlineInputAdjust;
+       });
+
+       document.addEventListener('DOMContentLoaded', () => {
+         const form = document.querySelector('form');
+         let value;
+         try {
+           value = JSON.parse(localStorage.getItem('save'));
+           for (const el of form.elements) {
+             const name = el.getAttribute('name');
+             if (name in value) {
+               el.value = value[name];
+             }
+             if (el.tagName == 'TEXTAREA') {
+               textAreaAdjust.call(el);
+             }
+           }
+         } catch (e) {
+           value = {};
+         }
+         form.oninput = e => {
+           const el = e.srcElement;
+           value[el.getAttribute('name')] = el.value;
+           localStorage.setItem('save', JSON.stringify(value));
+         }
+       });
+
