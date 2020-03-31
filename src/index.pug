@@ -38,6 +38,9 @@ head
       body {
         margin: 0 auto;
         max-width: 800px;
+        @media print {
+          max-width: 700px;
+        }
       }
       body > nav {
         margin: 12px;
@@ -68,7 +71,6 @@ head
         counter-reset: number;
         .q {
           counter-increment: number;
-          text-indent: -1em;
           &::before {
             content: counter(number)". ";
           }
@@ -76,11 +78,12 @@ head
       }
       form ul.qa, form ol.qa {
         padding-left: 16px;
-        & > li > div {
+        li > div {
+          break-inside: avoid;
           display: flex;
           flex-direction: column;
         }
-        & > li .q {
+        li .q {
           display: block;
           margin: 8px 0;
         }
@@ -368,7 +371,7 @@ body
       ol.qa
         li
           span What is meant by each of these phrases from the article:
-          ol
+          ol(type='a')
             li
               div
                 span.q "the little broken finger of Asia"
@@ -402,7 +405,7 @@ body
             span.q In your opinion, did the 33,000 American men who were killed in battle die in vain?  Explain your reasoning.
             textarea.a(name='page5-q7')
         li
-          ol
+          ol(type="a")
             li
               div
                 span.q How would you justify the war to a mother whose son was killed in the war?
