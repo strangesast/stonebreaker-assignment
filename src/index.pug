@@ -133,8 +133,9 @@ head
       }
 body
   .controls
-    button(onclick='toggleDarkMode()') Toggle Dark Mode
+    button#toggle-dark Toggle Dark Mode
     button(onclick='window.print()') Print
+    button#save-json Save JSON Backup
   form
     nav
       .name.form-item
@@ -499,51 +500,3 @@ body
         textarea.question(name='page6-q11')
         div.answer
           | Lack of creativity in movies
-
-
-    script(type="text/javascript").
-       function textAreaAdjust() {
-         this.style.height = '1px';
-         this.style.height = `${25+this.scrollHeight}px`;
-       }
-       Array.from(document.body.querySelectorAll('textarea')).forEach(el => {
-         el.setAttribute('placeholder', 'Enter your answer here...');
-         el.onkeyup = textAreaAdjust;
-       });
-
-       function inlineInputAdjust() {
-         this.setAttribute('size', Math.max(3, this.value.length));
-       }
-
-       Array.from(document.body.querySelectorAll('input.inline')).forEach(el => {
-         el.setAttribute('placeholder', 'Answer');
-         el.onkeyup = inlineInputAdjust;
-       });
-
-       document.addEventListener('DOMContentLoaded', () => {
-         const form = document.querySelector('form');
-         let value;
-         try {
-           value = JSON.parse(localStorage.getItem('save'));
-           for (const el of form.elements) {
-             const name = el.getAttribute('name');
-             if (name in value) {
-               el.value = value[name];
-             }
-             if (el.tagName == 'TEXTAREA') {
-               textAreaAdjust.call(el);
-             }
-           }
-         } catch (e) {
-           value = {};
-         }
-         form.oninput = e => {
-           const el = e.srcElement;
-           value[el.getAttribute('name')] = el.value;
-           localStorage.setItem('save', JSON.stringify(value));
-         }
-       });
-       function toggleDarkMode() {
-         document.body.classList.toggle('dark');
-       }
-

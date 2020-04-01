@@ -1,0 +1,34 @@
+sudo: required
+
+language: node_js
+node_js:
+  - 13
+
+arch:
+  - amd64
+
+branches:
+  only:
+  - master
+
+os:
+  - linux
+
+cache:
+  directories:
+    - ./node_modules
+
+script:
+  - npm run-script build
+
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    allow_failure: true
+    keep_history: true
+    verbose: true
+    local_dir: ./dist
+    edge: true
+    on:
+      branch: master
