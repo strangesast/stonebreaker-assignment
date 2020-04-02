@@ -1,0 +1,142 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+}
+
+body > .controls {
+  display: flex;
+  margin: 8px 0;
+  & > * {
+    margin-right: 8px;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+body.dark {
+  background: black;
+  color: white;
+  @media print {
+    color: black;
+  }
+}
+
+section.page {
+  margin-bottom: 80px;
+  break-after: page;
+}
+
+input[type=text], textarea {
+  font-style: italic;
+  resize: none;
+  padding: 0;
+  border:none;
+  color: inherit;
+  background: inherit;
+  background-image:none;
+  background-color:transparent;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: inherit;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    outline: 1px solid grey;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+form .form-item {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  & > label {
+    margin-right: 8px;
+  }
+}
+
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  @media print {
+    max-width: 700px;
+  }
+}
+
+body > nav {
+  margin: 12px;
+}
+
+body header {
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.table {
+  display: grid;
+  grid-gap: 20px;
+  margin: 40px 0;
+  &.three-cols {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &.two-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  & > .h {
+    font-weight: 500;
+    text-decoration: underline;
+  }
+}
+
+.question-table {
+  counter-reset: number;
+  .q {
+    counter-increment: number;
+    &::before {
+      content: counter(number)". ";
+    }
+  }
+}
+
+form ul.qa, form ol.qa {
+  padding-left: 16px;
+  li > div {
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+  }
+  li .q {
+    display: block;
+    margin: 8px 0;
+  }
+  & > li .a {
+  }
+}
+
+p.title {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.diagram {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+
+  & > .block {
+    border: 1px solid black;
+    padding: 8px 20px;
+    & > span {
+      font-size: 1.2em;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+import './index.scss';
+
 function textAreaAdjust() {
   this.style.height = '1px';
   this.style.height = `${25+this.scrollHeight}px`;
