@@ -6,6 +6,9 @@ body
     button#toggle-dark Toggle Dark Mode
     button(onclick='window.print()') Print
     button#save-json Save JSON Backup
+    button#load-json Load JSON Backup
+    button#clear Clear Form
+    input(type='file' accept='.json')#file-input
   form
     nav
       .name.form-item
@@ -13,6 +16,7 @@ body
         input#document-owner-input(type='text' placeholder='John Doe' name='document-owner')
     header
       h1 The Cold War
+      img(src='./static/fitzpatrick.png')
     section.page#page-1
       .table.three-cols.question-table
         span.h Event
@@ -151,7 +155,9 @@ body
       p Part A: Interpret the following cartoons by answering the questions below.
       ul.qa
         li
-          span Cartoon 1: "Great Expectations"
+          div
+            span Cartoon 1: "Great Expectations"
+            img(src='./static/marcus.png')
           ol
             li
               div
@@ -174,7 +180,9 @@ body
                 span.q Through what 1947 policy did the United States act to spoil Russia's "Great Expectations" in this area?
                 textarea.a(name='page4-q5')
         li
-          span Cartoon 2: "Step on it, Doc!"
+          div
+            span Cartoon 2: "Step on it, Doc!"
+            img(src='./static/justus.png')
           ol
             li
               div
@@ -197,7 +205,9 @@ body
                 span.q Through what 1947 policy did the United States hasten to send economic aid to a Europe devastated by war?
                 textarea.a(name='page4-q10')
         li
-          span Cartoon 3: "Unintentional Cupid"
+          div
+            span Cartoon 3: "Unintentional Cupid"
+            img(src='./static/yardley.png')
           ol
             li
               div
@@ -220,7 +230,9 @@ body
                 span.q In what sense could the Atlantic Pact be referred to as a "shotgun wedding"?
                 textarea.a(name='page4-q15')
         li
-          span Cartoon 4: "History Doesn't Repeat Itself."
+          div
+            span Cartoon 4: "History Doesn't Repeat Itself."
+            img(src='./static/low.png')
           ol
             li
               div
@@ -245,6 +257,7 @@ body
 
       
       p Part B: To conclude this lesson, interpret the final cartoon below by answering the questions at the end.
+      img(src='./static/justus2.png')
       ol.qa
         li
           div
@@ -370,3 +383,114 @@ body
         textarea.question(name='page6-q11')
         div.answer
           | Lack of creativity in movies
+    section.page#page-7
+      p.title Loyalty vs. Liberty: The McCarthy Era
+      ol.qa
+        li
+          div
+            span.q List examples of planning displayed in a Levittown.
+            textarea.a(name='page7-q1')
+        li
+          div
+            span.q Why did Levitt plan everything the same?
+            textarea.a(name='page7-q2')
+        li
+          div
+            span.q Cite examples of conformity in Levittown.
+            textarea.a(name='page7-q3')
+        li
+          div
+            span.q How does Levitt attempt to show variety? In your opinion, does it succeed? Explain your position.
+            textarea.a(name='page7-q4')
+        li
+          div
+            span.q Levittown in the 1980s has taken on a new look. How has conformity been replaced?
+            textarea.a(name='page7-q5')
+        li
+          div
+            span.q Why has conformity been replaced in Levittown?
+            textarea.a(name='page7-q6')
+        li
+          div
+            span.q Explain which Levittown - old or new - better expresses the American spirit.
+            textarea.a(name='page7-q6')
+    section.page#page-8
+      p.title Loyalty vs. Liberty: The McCarthy Era
+      p Part A.  One of the best ways to review a period in history is through a study of its most important events.  Below are some of the milestones from 1920 to 1960.  Recall the turning points of this period by completing the chart that follows, listing for each item a cause, an effect, and a category such as political, economic, or social.
+      .table.four-cols
+        span.h Milestones
+        span.h Cause
+        span.h Effect(s)
+        span.h Category
+
+        div.q
+          | 1920 Census:
+        textarea.a(name='page8-q1-a')
+        textarea.a(name='page8-q1-b')
+        textarea.a(name='page8-q1-c')
+
+        div.q
+          | Immigration Act of 1924:
+        textarea.a(name='page8-q2-a')
+        textarea.a(name='page8-q2-b')
+        textarea.a(name='page8-q2-c')
+
+        div.q
+          | Stock Market Crash:
+        textarea.a(name='page8-q3-a')
+        textarea.a(name='page8-q3-b')
+        textarea.a(name='page8-q3-c')
+
+        div.q
+          | Inauguration of Franklin D. Roosevelt:
+        textarea.a(name='page8-q4-a')
+        textarea.a(name='page8-q4-b')
+        textarea.a(name='page8-q4-c')
+
+        div.q
+          | Wagner Act:
+        textarea.a(name='page8-q5-a')
+        textarea.a(name='page8-q5-b')
+        textarea.a(name='page8-q5-c')
+
+        div.q
+          | "Rosie the Riveter":
+        textarea.a(name='page8-q6-a')
+        textarea.a(name='page8-q6-b')
+        textarea.a(name='page8-q6-c')
+
+        div.q
+          | D-Day:
+        textarea.a(name='page8-q7-a')
+        textarea.a(name='page8-q7-b')
+        textarea.a(name='page8-q7-c')
+
+        div.q
+          | Atomic bomb:
+        textarea.a(name='page8-q8-a')
+        textarea.a(name='page8-q8-b')
+        textarea.a(name='page8-q8-c')
+
+        div.q
+          | Truman Doctrine:
+        textarea.a(name='page8-q9-a')
+        textarea.a(name='page8-q9-b')
+        textarea.a(name='page8-q9-c')
+
+        div.q
+          | Levittown:
+        textarea.a(name='page8-q10-a')
+        textarea.a(name='page8-q10-b')
+        textarea.a(name='page8-q10-c')
+
+        div.q
+          i Brown v. Board of Education of Topeka:
+        textarea.a(name='page8-q11-a')
+        textarea.a(name='page8-q11-b')
+        textarea.a(name='page8-q11-c')
+
+        div.q
+          | Salk vaccine:
+        textarea.a(name='page8-q12-a')
+        textarea.a(name='page8-q12-b')
+        textarea.a(name='page8-q12-c')

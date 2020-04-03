@@ -4,9 +4,11 @@
   "description": "webpack-pug-starter",
   "dependencies": {},
   "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^4.0.3",
     "jstransformer-scss": "^1.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "pug-cli": "^1.0.0-alpha6",
     "pug-loader": "^2.4.0",
